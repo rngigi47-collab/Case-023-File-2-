@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0a09" />
+  <title>CASE 023 — File 01</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Special+Elite&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+
+    <!-- STAGE 0 -->
+    <section id="envelopeStage" class="stage active envelope-stage" aria-label="Sealed file">
+      <div class="ambient-fog fog-a"></div>
+      <div class="ambient-fog fog-b"></div>
+
+      <div class="stage-meta">
+        <span>HUMAN BEHAVIOUR DIVISION</span>
+        <span>01.10.2026</span>
+      </div>
+
+      <div class="envelope-wrap">
+        <button id="envelopeBtn" class="envelope" type="button" aria-label="Open sealed envelope">
+          <span class="envelope-back"></span>
+          <span class="envelope-paper-shadow"></span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="wax-seal">023</span>
+          <span class="envelope-label">
+            <b>CONFIDENTIAL</b>
+            <small>FOR W. ATURIA</small>
+          </span>
+        </button>
+      </div>
+
+      <p class="stage-hint">Tap the sealed envelope.</p>
+
+      <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">
+        ♪ SOUND: OFF
+      </button>
+    </section>
+
+    <!-- STAGE 1 -->
+    <section id="passwordStage" class="stage password-stage" aria-label="Password entry">
+      <div class="security-panel">
+        <p class="eyebrow light">SECURE ARCHIVE // FILE 01</p>
+        <h1>IDENTITY CHECK</h1>
+        <p class="security-copy">This file is date-locked.</p>
+
+        <form id="passwordForm" autocomplete="off">
+          <label for="passwordInput">ENTER ACCESS CODE</label>
+          <div class="password-row">
+            <input id="passwordInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" aria-describedby="passwordHint" />
+            <button type="button" id="showPasswordBtn" class="peek-btn" aria-label="Show password">SHOW</button>
+          </div>
+          <p id="passwordHint" class="tiny">Six digits. No separators.</p>
+          <button class="access-btn" type="submit">VERIFY ACCESS</button>
+        </form>
+
+        <p id="passwordFeedback" class="password-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- STAGE 2 -->
+    <section id="revealStage" class="stage reveal-stage" aria-label="Recovered case file">
+      <div class="open-envelope" aria-hidden="true">
+        <div class="open-envelope-back"></div>
+        <div class="open-envelope-flap"></div>
+      </div>
+
+      <button id="folderBtn" class="case-folder" type="button" aria-label="Open Case 023 file">
+        <span class="folder-tab">CASE 023</span>
+        <span class="folder-stamp">CONFIDENTIAL</span>
+        <span class="folder-title">FILE 01</span>
+        <span class="folder-subtitle">EVIDENCE REVIEW</span>
+        <span class="folder-small">ARCHIVAL REVIEW</span>
+      </button>
+
+      <p class="stage-hint light-hint">Access granted. Tap the file.</p>
+    </section>
+
+    <!-- STAGE 3+ -->
+    <section id="caseStage" class="stage case-stage" aria-label="Case 023 file">
+      <div class="desk">
+        <article class="file" aria-labelledby="case-title">
+          <div class="paperclip" aria-hidden="true"></div>
+
+          <header class="file-header">
+            <div>
+              <p class="dept">HUMAN BEHAVIOUR DIVISION</p>
+              <p class="micro">INVESTIGATION&nbsp;&nbsp;|&nbsp;&nbsp;ANALYSIS&nbsp;&nbsp;|&nbsp;&nbsp;TRUTH</p>
+            </div>
+            <div class="ref-block">
+              <p>REF: HBD/023-01</p>
+              <p>DATE: 01.10.2026</p>
+            </div>
+          </header>
+
+          <section id="cover" class="screen active" aria-label="Case cover">
+            <div class="stamp">CONFIDENTIAL<br><span>FOR AUTHORISED EYES ONLY</span></div>
+            <p class="eyebrow">ARCHIVAL REVIEW</p>
+            <h1 id="case-title">CASE 023</h1>
+            <div class="rule"></div>
+            <h2>FILE 01: <span>EVIDENCE REVIEW</span></h2>
+
+            <dl class="case-grid">
+              <div><dt>INVESTIGATOR:</dt><dd>W. ATURIA</dd></div>
+              <div><dt>CASE STATUS:</dt><dd>ACTIVE</dd></div>
+              <div><dt>CLEARANCE:</dt><dd>AUTHORISED</dd></div>
+              <div><dt>DIRECTIVE:</dt><dd>REVIEW BEFORE TRANSITION</dd></div>
+            </dl>
+
+            <p class="intro">23 years recorded.<br>Final review in progress.</p>
+
+            <button id="beginBtn" class="primary">BEGIN EVIDENCE REVIEW</button>
+          </section>
+
+          <section id="evidence" class="screen" aria-label="Evidence review">
+            <div class="section-heading">
+              <p class="eyebrow">FILE 01</p>
+              <h2>EVIDENCE REVIEW</h2>
+              <p>Three behaviours. One underlying pattern.</p>
+            </div>
+
+            <p class="instruction">Tap each subject file to reveal the evidence.</p>
+
+            <div class="subjects">
+              <button class="subject-card" data-subject="a" aria-expanded="false">
+                <span class="subject-label">SUBJECT A</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">Walked away from an opportunity he had spent years claiming to want.</span>
+              </button>
+
+              <button class="subject-card" data-subject="b" aria-expanded="false">
+                <span class="subject-label">SUBJECT B</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">Told others she was doing well when, in truth, she was struggling badly.</span>
+              </button>
+
+              <button class="subject-card" data-subject="c" aria-expanded="false">
+                <span class="subject-label">SUBJECT C</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">Became angry whenever he felt embarrassed or exposed.</span>
+              </button>
+            </div>
+
+            <div id="unlockNotice" class="unlock-notice" aria-live="polite">
+              <span id="progressText">0 / 3 evidence files reviewed</span>
+            </div>
+
+            <section id="questionPanel" class="question-panel hidden" aria-labelledby="questionTitle">
+              <div class="divider"></div>
+              <p class="eyebrow">ASSESSMENT QUESTION</p>
+              <h3 id="questionTitle">What do these three behaviours have in common?</h3>
+
+              <form id="quizForm">
+                <label class="option">
+                  <input type="radio" name="answer" value="A">
+                  <span><b>A.</b> They are examples of weakness.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="B">
+                  <span><b>B.</b> They prove people often act irrationally for no reason.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="C">
+                  <span><b>C.</b> Each visible behaviour is protecting or serving something underneath it.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="D">
+                  <span><b>D.</b> Their only similarity is poor decision-making.</span>
+                </label>
+
+                <button class="primary" type="submit">SUBMIT ASSESSMENT</button>
+              </form>
+
+              <p id="feedback" class="feedback" aria-live="polite"></p>
+            </section>
+          </section>
+
+          <section id="result" class="screen" aria-label="Assessment result">
+            <div class="passed-stamp">PASSED</div>
+            <p class="eyebrow">ASSESSMENT RESULT</p>
+            <h2>RESPONSE LOGGED: <span>C</span></h2>
+
+            <div class="result-copy">
+              <p>You identified the central error in surface-level judgment.</p>
+              <p>Visible behaviour is not always the full truth. Actions can conceal fear, shame, protection, longing, or need.</p>
+              <p><strong>You looked beyond the action. That matters.</strong></p>
+            </div>
+
+            <div class="key-card" aria-label="Recovered Key 01">
+              <p>RECOVERED KEY 01</p>
+              <strong>MOTIVE</strong>
+              <small>Preserve this key. It will be required later.</small>
+            </div>
+
+            <blockquote>“Sometimes a label was simply the point at which curiosity had stopped.”</blockquote>
+
+            <button id="archiveBtn" class="secondary">ARCHIVE FILE 01</button>
+          </section>
+
+          <section id="archived" class="screen" aria-label="File archived">
+            <p class="eyebrow">CASE 023 // FILE 01</p>
+            <h2>FILE ARCHIVED</h2>
+            <p class="archive-copy">One layer has been examined.<br>More remain.</p>
+
+            <div class="stored-key">
+              <span>KEY 01 STORED</span>
+              <strong>MOTIVE</strong>
+            </div>
+
+            <p class="next">NEXT ACTIVATION<br><b>02.10 // FILE 02</b></p>
+            <p class="final-line">The beginning of understanding is refusing to stop at the surface.</p>
+          </section>
+
+          <footer>
+            <span>CASE 023 / FILE 01</span>
+            <span>PEOPLE. PATTERNS. MOTIVES. TRUTH.</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
