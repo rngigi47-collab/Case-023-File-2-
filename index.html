@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1a2b" />
+  <title>CASE 023 — File 02</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Special+Elite&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=day2navyteal" />
+</head>
+<body>
+  <main id="app">
+
+    <section id="envelopeStage" class="stage active envelope-stage" aria-label="Sealed file">
+      <div class="stage-meta">
+        <span>HUMAN BEHAVIOUR DIVISION</span>
+        <span>02.10.2026</span>
+      </div>
+
+      <div class="envelope-wrap">
+        <button id="envelopeBtn" class="envelope" type="button" aria-label="Open sealed envelope">
+          <span class="envelope-back"></span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="wax-seal">023</span>
+          <span class="envelope-label">
+            <b>CONFIDENTIAL</b>
+            <small>FOR W. ATURIA</small>
+          </span>
+        </button>
+      </div>
+
+      <p class="stage-hint">Tap the sealed envelope.</p>
+
+      <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">
+        ♪ SOUND: OFF
+      </button>
+    </section>
+
+    <section id="passwordStage" class="stage password-stage" aria-label="Password entry">
+      <div class="security-panel">
+        <p class="eyebrow light">SECURE ARCHIVE // FILE 02</p>
+        <h1>IDENTITY CHECK</h1>
+        <p class="security-copy">This file is date-locked.</p>
+
+        <form id="passwordForm" autocomplete="off">
+          <label for="passwordInput">ENTER ACCESS CODE</label>
+          <div class="password-row">
+            <input id="passwordInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" />
+            <button type="button" id="showPasswordBtn" class="peek-btn">SHOW</button>
+          </div>
+          <p class="tiny">Six digits. No separators.</p>
+          <button class="access-btn" type="submit">VERIFY ACCESS</button>
+        </form>
+
+        <p id="passwordFeedback" class="password-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="revealStage" class="stage reveal-stage" aria-label="Recovered case file">
+      <div class="open-envelope" aria-hidden="true">
+        <div class="open-envelope-back"></div>
+        <div class="open-envelope-flap"></div>
+      </div>
+
+      <button id="folderBtn" class="case-folder" type="button" aria-label="Open Case 023 file">
+        <span class="folder-tab">CASE 023</span>
+        <span class="folder-stamp">CLASSIFIED</span>
+        <span class="folder-title">FILE 02</span>
+        <span class="folder-subtitle">PATTERN ANALYSIS</span>
+        <span class="folder-small">ARCHIVAL REVIEW</span>
+      </button>
+
+      <p class="stage-hint light-hint">Access granted. Tap the file.</p>
+    </section>
+
+    <section id="caseStage" class="stage case-stage" aria-label="Case 023 file">
+      <div class="desk">
+        <article class="file" aria-labelledby="case-title">
+          <div class="paperclip" aria-hidden="true"></div>
+
+          <header class="file-header">
+            <div>
+              <p class="dept">HUMAN BEHAVIOUR DIVISION</p>
+              <p class="micro">INVESTIGATION | ANALYSIS | TRUTH</p>
+            </div>
+            <div class="ref-block">
+              <p>REF: HBD/023-02</p>
+              <p>DATE: 02.10.2026</p>
+            </div>
+          </header>
+
+          <section id="cover" class="screen active">
+            <div class="stamp">CLASSIFIED<br><span>FOR AUTHORISED EYES ONLY</span></div>
+            <p class="eyebrow">ARCHIVAL REVIEW</p>
+            <h1 id="case-title">CASE 023</h1>
+            <div class="rule"></div>
+            <h2>FILE 02: <span>PATTERN ANALYSIS</span></h2>
+
+            <dl class="case-grid">
+              <div><dt>INVESTIGATOR:</dt><dd>W. ATURIA</dd></div>
+              <div><dt>CASE STATUS:</dt><dd>ACTIVE</dd></div>
+              <div><dt>CLEARANCE:</dt><dd>AUTHORISED</dd></div>
+              <div><dt>DIRECTIVE:</dt><dd>REVIEW BEFORE TRANSITION</dd></div>
+            </dl>
+
+            <p class="intro">Second layer under review.<br>Fear rarely introduces itself honestly.</p>
+
+            <button id="beginBtn" class="primary">BEGIN PATTERN ANALYSIS</button>
+          </section>
+
+          <section id="evidence" class="screen">
+            <div class="section-heading">
+              <p class="eyebrow">FILE 02</p>
+              <h2>PATTERN ANALYSIS</h2>
+              <p>Different behaviours. One hidden force.</p>
+            </div>
+
+            <p class="instruction">Tap each record to reveal the evidence.</p>
+
+            <div class="subjects">
+              <button class="subject-card" data-subject="a" aria-expanded="false">
+                <span class="subject-label">RECORD A</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">Embarrassment arrived first. Silence followed. Then anger. The aggression restored a sense of power before the shame could be seen.</span>
+              </button>
+
+              <button class="subject-card" data-subject="b" aria-expanded="false">
+                <span class="subject-label">RECORD B</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">Perfectionism demanded certainty before action. Preparation kept expanding until movement became almost impossible.</span>
+              </button>
+
+              <button class="subject-card" data-subject="c" aria-expanded="false">
+                <span class="subject-label">RECORD C</span>
+                <span class="subject-status">TAP TO REVEAL</span>
+                <span class="subject-copy">The mind called it realism when it wanted smaller dreams, and self-respect when it wanted distance before rejection.</span>
+              </button>
+            </div>
+
+            <div class="unlock-notice" aria-live="polite">
+              <span id="progressText">0 / 3 records reviewed</span>
+            </div>
+
+            <section id="questionPanel" class="question-panel hidden">
+              <div class="divider"></div>
+              <p class="eyebrow">ASSESSMENT QUESTION</p>
+              <h3>What is the common force beneath all three records?</h3>
+
+              <form id="quizForm">
+                <label class="option">
+                  <input type="radio" name="answer" value="A">
+                  <span><b>A.</b> Anger.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="B">
+                  <span><b>B.</b> Fear wearing different disguises.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="C">
+                  <span><b>C.</b> Lack of discipline.</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="D">
+                  <span><b>D.</b> A need for control, and nothing else.</span>
+                </label>
+
+                <button class="primary" type="submit">SUBMIT ASSESSMENT</button>
+              </form>
+
+              <p id="feedback" class="feedback" aria-live="polite"></p>
+            </section>
+          </section>
+
+          <section id="result" class="screen">
+            <div class="passed-stamp">PASSED</div>
+            <p class="eyebrow">ASSESSMENT RESULT</p>
+            <h2>RESPONSE LOGGED: <span>B</span></h2>
+
+            <div class="result-copy">
+              <p>You identified the shared mechanism correctly.</p>
+              <p>Different behaviours can be built around the same hidden force. In this file, fear changes costume rather than disappearing.</p>
+              <p><strong>Pattern identified. The file has yielded a key.</strong></p>
+            </div>
+
+            <div class="key-card">
+              <p>RECOVERED KEY 02</p>
+              <strong>FEAR</strong>
+              <small>Preserve this key. It will be required later.</small>
+            </div>
+
+            <blockquote>“Fear predicts. Discipline tests the prediction.”</blockquote>
+
+            <button id="archiveBtn" class="secondary">ARCHIVE FILE 02</button>
+          </section>
+
+          <section id="archived" class="screen">
+            <p class="eyebrow">CASE 023 // FILE 02</p>
+            <h2>FILE ARCHIVED</h2>
+            <p class="archive-copy">Second layer examined.<br>The suspect has been identified.</p>
+
+            <div class="stored-key">
+              <span>KEY 02 STORED</span>
+              <strong>FEAR</strong>
+            </div>
+
+            <p class="next">NEXT ACTIVATION<br><b>03.10 // FILE 03</b></p>
+            <p class="final-line">Courage is movement while fear continues making its argument.</p>
+          </section>
+
+          <footer>
+            <span>CASE 023 / FILE 02</span>
+            <span>PEOPLE. PATTERNS. MOTIVES. TRUTH.</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=021026b"></script>
+</body>
+</html>
